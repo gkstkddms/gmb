@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>그로테스크 디지털 체험존</title>
+  <link rel="stylesheet" href="styles/test_2.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="balloon">🐤 나 오늘도 위선적이었나…?</div>
+    <div class="question-box">
+      <h2>3. 다수의 의견에 반하면 내가 잘못된 것 같아 조용히 따를 때가 많다.</h2>
+      <div class="buttons">
+        <button onclick="answer(1)">그렇다</button>
+        <button onclick="answer(0)">아니다</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function answer(score) {
+      localStorage.setItem('score3', score);
+      window.location.href = 'test_4.html';
+    }
+  </script>
+
+</body>
+</html>

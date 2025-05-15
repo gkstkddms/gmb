@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그로테스크 디지털 체험존</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles/test_11.css">
+</head>
+<body>
+  <div class="container">
+    <div class="question-box">
+      <h2>12. 진짜?</h2>
+      <div class="button-box">
+        <button onclick="answer(1)">그렇다</button>
+        <button onclick="answer(0)">아니다</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function answer(score) {
+      localStorage.setItem('score1', score);
+      window.location.href = 'test_12.html';
+    }
+  </script>
+</body>
+</html>

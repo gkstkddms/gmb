@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>그로테스크 디지털 체험존</title>
+  <link rel="stylesheet" href="styles/test_12.css">
+</head>
+<body class="dark-ui">
+  <div class="container">
+    <div class="question-box">
+      <h2 id="question-text">13. 진짜?</h2>
+    </div>
+  </div>
+  <div class="buttons">
+    <button id="yes-btn" onmouseenter="moveYesBtn()" onclick="submitYes()">그렇다</button>
+    <button id="no-btn">아니다</button>
+  </div>
+
+  <script>
+    let moveCount = 0;
+const yesBtn = document.getElementById('yes-btn');
+const box = document.querySelector('.button-box');
+let canClick = false;  // 클릭 가능 상태 여부
+
+function moveYesBtn() {
+  if (canClick) return; // 이미 정지 상태면 이동 안 함
+
+  moveCount++;
+  if (moveCount >= 20) {
+    yesBtn.onmouseenter = null;
+    canClick = true;  // 클릭 허용 상태로 변경
+    return;
+  }
+
+  const maxX = window.innerWidth - yesBtn.offsetWidth;
+  const maxY = window.innerHeight - yesBtn.offsetHeight;
+
+  const randX = Math.random() * maxX;
+  const randY = Math.random() * maxY;
+
+  yesBtn.style.position = 'fixed';
+  yesBtn.style.left = `${randX}px`;
+  yesBtn.style.top = `${randY}px`;
+}
+
+function submitYes() {
+  if (!canClick) return;  // 아직 클릭할 수 없으면 무시
+  localStorage.setItem('score12', 1);
+  window.location.href = 'test_13.html';
+}
+
+
+  </script>
+</body>
+</html>

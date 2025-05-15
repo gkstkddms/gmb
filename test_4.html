@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>그로테스크 디지털 체험존</title>
+  <link rel="stylesheet" href="styles/test_4.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="balloon">🐤 나 오늘도 위선적이었나…?</div>
+    <div class="question-box">
+      <h2 id="question-text">
+        4. SNS에 시간을 하루에 30분 이상 사용하며, 팔로워와 좋아요 수를 하루에 여러 번 확인한다.
+      </h2>
+      <div class="buttons">
+        <button onclick="answer(true)" id="yes-btn">그렇다</button>
+        <button onclick="answer(false)" id="no-btn">아니다</button>
+      </div>
+    </div>
+    <script>
+    let locked = false;
+
+    function answer(isYes) {
+      if (locked) return; // 입력 잠금 중이면 무시
+
+      if (isYes) {
+        locked = true;
+        document.body.classList.add('dark-ui');
+
+        // 질문 문구 교체
+        document.getElementById('question-text').textContent =
+          '4. 나는 ‘팔로워’와 ‘좋아요’로 가장한 데이터 쪼가리에 위안을 얻는다.';
+
+        // 아니다 버튼은 외형만 그렇다처럼 보이도록
+        const noBtn = document.getElementById('no-btn');
+        noBtn.textContent = '아니다';
+        noBtn.onmouseenter = () => noBtn.textContent = '그렇다';
+        noBtn.onmouseleave = () => noBtn.textContent = '아니다';
+
+        // 모든 버튼 비활성화
+        document.getElementById('yes-btn').disabled = true;
+        document.getElementById('no-btn').disabled = true;
+
+        // 5초 후 다음 페이지로 이동
+        setTimeout(() => {
+          localStorage.setItem('score4', 1);
+          window.location.href = 'test_5.html';
+        }, 15000);
+
+      } else {
+        localStorage.setItem('score4', 0);
+        window.location.href = 'test_5.html';
+      }
+    }
+
+    function createFlower() {
+      if (document.body.classList.contains('dark-ui')) return;
+
+      for (let i = 0; i < 3; i++) {  // 한 번에 3개 생성
+        const flower = document.createElement('div');
+        flower.classList.add('flower');
+        flower.textContent = '🌸';
+
+        flower.style.left = Math.random() * 100 + 'vw';
+        flower.style.animationDuration = (3 + Math.random() * 2) + 's';
+        flower.style.fontSize = (16 + Math.random() * 16) + 'px';
+
+        document.getElementById('flower-container').appendChild(flower);
+
+        setTimeout(() => {
+          flower.remove();
+        }, 5000);
+      }
+    }
+    setInterval(createFlower, 500);
+
+  </script>
+  <div id="flower-container"></div>
+</body>
+</html>

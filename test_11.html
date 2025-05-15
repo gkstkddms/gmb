@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>그로테스크 디지털 체험존</title>
+  <link rel="stylesheet" href="styles/test_11.css" />
+</head>
+<body class="dark-ui">
+  <div class="container">
+    <div class="question-box">
+      <h2 id="question-text">11. 나는 위선자일까?</h2>
+      <div class="button-box">
+        <button onclick="goNext()">그렇다</button>
+        <button onclick="goNext()">아니다</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function goNext() {
+      localStorage.setItem('score11', 1);
+      window.location.href = 'test_12_1.html';
+    }
+  </script>
+</body>
+</html>

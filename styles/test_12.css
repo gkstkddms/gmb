@@ -1,0 +1,73 @@
+/* 기본 레이아웃 */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: #000;
+  color: #fff;
+  font-family: 'Varela Round', sans-serif;
+  position: relative;
+}
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  text-align: center;
+}
+
+.question-box {
+  max-width: 700px;
+  border: 1px solid rgb(168, 64, 64);
+  padding: 40px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.5s ease;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+/* 버튼 박스 */
+.button-box {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  position: relative;
+  margin-top: 40px;
+  z-index: 3;
+}
+
+#yes-btn, #no-btn {
+  position: fixed;  /* ✅ 중요 */
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 50px;
+  background: rgb(168, 64, 64);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+#yes-btn {
+  left: 50%;
+  top: 65%;
+  transform: translate(-50%, -50%);
+}
+
+#no-btn {
+  left: 50%;
+  top: 75%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0.6;
+}

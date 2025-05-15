@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>그로테스크 디지털 체험존</title>
+  <link rel="stylesheet" href="styles/result.css">
+</head>
+<body>
+  <div class="container">
+    <div class="question-box">       
+      <button onclick="goHome()" class="start-btn">시작화면으로 돌아가기</button>
+    </div>
+  </div>
+  <div class="final-message" id="finalMessage"></div>
+
+<script>
+  function goHome() {
+    localStorage.clear();
+    window.location.href = 'test.html';
+  }
+
+  const firstMessage = "거울 속 당신은 자신이 원하는 모습일까요?\n사람들이 원하는 모습일까요?\n\n\n이제, 당신은 무엇을 할 것인가요?";
+  const secondMessage = "걱정 마세요.\n모두가 조금씩 가면을 쓰고 삽니다.\n당신의 가면은...\n\n\n잘 어울리는 편이에요.";
+
+  const target = document.getElementById("finalMessage");
+  let index = 0;
+
+  function typeText() {
+    if (index < firstMessage.length) {
+      target.textContent += firstMessage[index];
+      index++;
+      setTimeout(typeText, 80);  
+    } else {
+      // 첫 문장 다 출력된 후 3초 기다렸다가 다음 문장으로 전환
+      setTimeout(showSecondMessage, 3000);
+    }
+  }
+
+  function showSecondMessage() {
+    target.textContent = ""; // 기존 메시지 삭제
+    let i = 0;
+    function typeSecond() {
+      if (i < secondMessage.length) {
+        target.textContent += secondMessage[i];
+        i++;
+        setTimeout(typeSecond, 80);
+      }
+    }
+    typeSecond();
+  }
+
+  window.onload = typeText;
+</script>
+
+
+</body>
+</html>

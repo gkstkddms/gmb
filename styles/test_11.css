@@ -1,0 +1,80 @@
+body {
+  background: #000;
+  color: #fff;
+  font-family: 'Varela Round', sans-serif;
+  transition: background 0.5s, color 0.5s;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  text-align: center;
+}
+
+.question-box {
+  max-width: 700px;
+  border: 1px solid rgb(168, 64, 64);
+  padding: 40px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.5s ease;
+}
+
+.dark-ui .question-box {
+  background: rgba(168, 64, 64, 0.1);
+  border-color: rgb(168, 64, 64);
+  color: rgb(255, 150, 150);
+  text-shadow: 0 0 8px red;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.button-box {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.button-box button {
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  background: rgb(168, 64, 64);
+  color: #fff;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.button-box button:hover {
+  background: #fff;
+  color: rgb(168, 64, 64);
+  transform: scale(1.05);
+}
+
+.dark-ui #no-btn:hover::after {
+  content: '그렇다';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  color: rgb(255, 120, 120);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  z-index: 1;
+}
+
+
+
+

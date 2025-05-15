@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>그로테스크 디지털 체험존</title>
+  <link rel="stylesheet" href="styles/test_2.css" />
+</head>
+<body>
+  <div class="container">    
+    <div class="question-box">
+      <h2>2. 내가 누군가를 평가하는 기준은, 겉모습이나 직업, 팔로워 수 같은 외적 요소에 영향을 받는다.</h2>
+      <div class="buttons">
+        <button onclick="answer(1)">그렇다</button>
+        <button onclick="answer(0)">아니다</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function answer(score) {
+      localStorage.setItem('score2', score);
+      window.location.href = 'test_3.html';
+    }
+  </script>
+</body>
+</html>

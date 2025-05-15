@@ -1,0 +1,279 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Varela+Round&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a, a:link, a:visited{
+    text-decoration: none;
+    color:inherit;
+}
+li{
+    list-style: none;
+}
+.container{
+    width: 1140px;
+    margin: 0 auto;
+}
+
+
+
+
+
+/* header */
+header{ 
+    position: fixed;
+    z-index: 1;
+    top:0;
+    width: 100%;
+    padding: 0 20px;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    background-color: rgb(0, 0, 0); 
+}
+
+
+header.active{
+    /* background-color: rgb(169, 241, 160); */
+    animation: fadeIn 0.8s ease-in-out;
+}
+@keyframes fadeIn{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+
+
+header h1 a img {
+    width: 80px; /* 로고 크기 키우기 */
+    height: auto;
+}
+
+
+
+header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+header button{
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    font-family: 'Quicksand';
+
+}
+header h1, nav ul li a  {
+    font-size: 1.2rem;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    font-family: 'Quicksand';
+
+}
+header h1, nav ul li a  {
+    font-size: 1.2rem;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    font-family: 'Quicksand';
+
+}
+header h1, nav ul li {
+    font-size: 1.2rem;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    font-family: 'Quicksand';
+
+}
+header nav ul{
+    display: flex;
+}
+header nav ul li{
+    padding: 10px;
+}
+header nav ul li button{
+    font-size: 1.2rem;
+}
+
+header button:hover {
+    color: rgba(116, 119, 113, 0.781); /* 마우스 올렸을 때 색 변경 */
+}
+header a:hover {
+    color: rgba(116, 119, 113, 0.781); /* 마우스 올렸을 때 색 변경 */
+}
+
+/*메인*/
+main{
+    width: 100%;
+    height: 100vh;
+    color: white;
+    background: linear-gradient(rgba(66, 66, 66, 0.5), rgba(66, 66, 66, 0.5)), url('/images/banner.png') center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items:  center;
+    text-align: center;
+}
+main h4{
+    font-size: 2rem;
+}
+main h2{
+    font-family: 'Varela Round', sans-serif;
+    font-size: 3.5rem;
+    margin: 2rem 0;
+    letter-spacing: 3px;
+}
+main p{
+    max-width: 500px;
+    margin: 0 auto;
+    font-size: 1.25rem;
+}
+main button.download{
+    background-color: transparent;
+    border: 3px solid white;
+    border-radius: 20px;
+    padding: 1rem 2rem;
+    margin-top: 3rem;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+main button.download:hover{
+    background-color: rgba(201, 197, 197, 0.3);
+
+
+}
+main h2 span::after{
+    content: "";
+    height: 40px;
+    width: 3px;
+    background-color: white;
+    display: inline-block;
+    animation: blink 0.7s ease-in-out infinite;
+}
+@keyframes blink{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes upDown{
+    0%{
+        bottom:1rem;
+    }
+    50%{
+        bottom:1.5rem;
+    }
+    100%{
+        bottom:1rem;
+    }
+}
+section{
+    font-family: 'Poppins', sans-serif;
+    padding: 5rem 0;
+}
+section:nth-child(2n){
+    background-color: #f8f8f8;
+}
+section .title{
+    margin-bottom: 3rem;
+}
+
+section .title h2{
+    font-size: 3.5rem;
+}
+section .title p{
+    font-size: 1.15rem;
+}
+
+
+
+/* about me */
+section .about-FG::after{
+    content: '';
+    clear: both;
+    display: block;
+}
+section .about-FG .right img{
+    width: 75%;
+    display: block; 
+    margin-left: 20%;
+}
+section .about-FG .right{
+    float:right;
+    width: 50%;
+}
+section .about-FG .left{
+    float:left;
+    width: 50%;
+}
+section .about-FG .left h3{
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+}
+section .about-FG .left h3 strong {
+    color: rgb(168, 64, 64);
+}
+section .about-FG .left p strong {
+    color: rgb(168, 64, 64);
+}
+section .about-FG .left p{
+    font-size: 1.15rem;
+    margin: 1rem 0;
+}
+
+
+section .about-LC::after{
+    content: '';
+    clear: both;
+    display: block;
+}
+section .about-LC .right img{
+    width: 85%;
+    display: block; 
+    margin-right: 20%;
+    margin-top: 10%;
+}
+section .about-LC .right{
+    float:left;
+    width: 50%;
+}
+section .about-LC .left{
+    float:right;
+    width: 50%;
+    padding: 0 2rem;
+}
+section .about-LC .left h3{
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+}
+section .about-LC .left h3 strong{
+    color: rgb(168, 64, 64);
+}
+section .about-LC .left p strong {
+    color: rgb(168, 64, 64);
+}
+section .about-LC .left p{
+    font-size: 1.15rem;
+    margin: 1rem 0;
+}
+
+
+.section {
+    display: none;
+}
+#main .container{
+    display: block;
+}

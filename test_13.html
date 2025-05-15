@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>그로테스크 디지털 체험존</title>
+  <link rel="stylesheet" href="styles/test_13.css">
+</head>
+<body class="dark-ui">
+  <div class="container">
+    <div class="question-box">
+      <h2 id="question-text">14. 진짜?</h2>
+    </div>
+  </div>
+  <div class="button-box">
+    <button id="yes-btn" onmouseenter="moveYesBtn()" onclick="submitYes()">그렇다</button>
+    <button id="no-btn">아니다</button>
+  </div>
+  <div id="dark-overlay"></div>
+
+  <script>
+    setTimeout(() => {
+      window.location.href = 'test_15.html';
+    }, 15000); // 10초 후 자동 이동
+  </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Varela+Round&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', 'Varela Round', sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 40px 20px;
+}
+
+.title h2 {
+    font-size: 4rem; 
+    font-weight: 700;
+  }
+
+.start-btn {
+  position: fixed;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 16px 40px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  background-color: rgb(168, 64, 64);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(168, 64, 64, 0.5);
+  z-index: 10;
+}
+
+.start-btn:hover {
+  background-color: #fff;
+  color: rgb(168, 64, 64);
+  transform: translateX(-50%) scale(1.05);
+  box-shadow: 0 0 20px rgba(168, 64, 64, 0.8);
+}
+
+.final-message {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700; /* 무게감 있게 */
+  font-family: 'Poppins', sans-serif; /* 고딕 느낌의 선명한 폰트 */
+  text-align: center;
+  max-width: 80%;
+  margin: 0 auto;
+  line-height: 1.8;
+  white-space: pre-line;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
